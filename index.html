@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny Application Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny Application Project">
+  <meta name="author" content="Mike Doerner">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny Application Project</h1>
+    <h2>Women Weight Prediction</h2>
+    <p>Mike Doerner<br/>Coursera  - Developing Data Products</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Women Weight Prediction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Predicts weight (lbs) for a given height (in)</li>
+<li>Data from R dataset &#39;women&#39; </li>
+<li>(<a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/women.html">https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/women.html</a>)</li>
+<li>Provides average weights of women from 58 to 72 inches tall</li>
+</ul>
+
+<pre><code class="r">data(women)
+head(women)
+</code></pre>
+
+<pre><code>##   height weight
+## 1     58    115
+## 2     59    117
+## 3     60    120
+## 4     61    123
+## 5     62    126
+## 6     63    129
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Function</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Input &#39;height&#39; from 58 to 72 inches</li>
+<li>Prediction of average &#39;weight&#39; in lbs from women dataset</li>
+</ul>
+
+<pre><code class="r">womenweight &lt;- function(height){
+  wrow &lt;- which(women[,1] == height)
+  weight &lt;- women[wrow,2]
+  weight
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Function Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Input height of 60 inches</li>
+</ul>
+
+<pre><code class="r">height &lt;- 60
+</code></pre>
+
+<ul>
+<li>App predicts weight in lbs</li>
+</ul>
+
+<pre><code class="r">womenweight(height)
+</code></pre>
+
+<pre><code>## [1] 120
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Women Weight Prediction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>To predict the weight of women for a given height, follow the link to the Shiny App</li>
+<li><a href="https://mdoerner4.shinyapps.io/Project/">https://mdoerner4.shinyapps.io/Project/</a></li>
+<li>Thanks!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Women Weight Prediction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Function'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Function Example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Women Weight Prediction'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
